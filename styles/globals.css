@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
+  background: url('../public/bg.png');
+  max-width: '1440px';
+}
+.chakra-ui-light{
+  --chakra-colors-chakra-body-bg: none;
+}
+
+.css-79z5gx {
+  background: #03120E;
+  /* background-image: url('../public/bg.png'); */
+}
+
+.content-drawer{
+  z-index: 99999 !important;
+}
+
+.chakra-ui-dark{
+  --chakra-colors-chakra-body-bg: none;
 }
 
 a {
@@ -13,14 +32,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
