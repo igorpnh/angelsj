@@ -5,8 +5,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'PT Sans Narrow', sans-serif;
-  background: url('../public/bg.png');
   max-width: '1440px';
+  background: #e8d7f1;
 }
 .chakra-ui-light{
   --chakra-colors-chakra-body-bg: none;

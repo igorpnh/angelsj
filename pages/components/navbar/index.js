@@ -13,6 +13,8 @@ import {
     IconButton,
     useDisclosure
 } from '@chakra-ui/react';
+import { useRouter } from 'next/dist/client/router'
+import { isActiveLink } from '../../../lib/utils'
 
 import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -20,6 +22,22 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 
 export const Navbar = () => {
+
+    const links = [
+        {
+            name: 'Início',
+            href: '/',
+        },
+        {
+            name: 'Peças',
+            href: '/pecas',
+        },
+        {
+            name: 'Contato',
+            href: '/contato',
+        },
+    ]
+
     const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
     const [isSmallerThan600] = useMediaQuery('(max-width: 600px)')
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -40,11 +58,12 @@ export const Navbar = () => {
                             alignItems='center'
                             flexDirection='column'
                             gap='3rem'
+                            color='black'
                             paddingTop='3rem'
-                            color='#F4FEC1'
                             fontFamily= 'PT Sans Narrow'
                         >
                             <Link
+                                
                                 href="/"
                                 _hover={{ textDecoration: 'none', color: '#cccc' }}
                             >
@@ -76,7 +95,7 @@ export const Navbar = () => {
                     display='flex'
                     alignItems='center'
                     maxW='1440px'
-                    justifyContent={isSmallerThan600 ? 'space-between' : 'space-around'}
+                    justifyContent={isSmallerThan600 ? 'space-between' : 'space-between'}
                 >
                     <Box>
                         <Image
@@ -105,26 +124,27 @@ export const Navbar = () => {
                         gap='3rem'
                         fontFamily='"Kanit", sans-serif'
                         fontSize='16'
-                        color='#F4FEC1'
+                        // color='#D3BCCC'
+                        color='#A167A5'
                     >
                         <Link
                             href="/"
-                            _hover={{ textDecoration: 'none', color: '#cccc' }}
+                            _hover={{ textDecoration: 'none', color: '#D3BCCC' }}
                         >
-                            HOME</Link>
+                            Home</Link>
 
                         <Link
                             href="#sobre"
-                            _hover={{ textDecoration: 'none', color: '#cccc' }}
+                            _hover={{ textDecoration: 'none', color: '#D3BCCC' }}
                         >
-                            PEÇAS</Link>
+                            Peças</Link>
 
                         <Link
                             href="#contatos"
-                            _hover={{ textDecoration: 'none', color: '#cccc' }}
+                            _hover={{ textDecoration: 'none', color: '#D3BCCC' }}
 
                         >
-                            CONTATOS</Link>
+                            Contatos</Link>
                     </Center>
                 </Container>
             </Box>
