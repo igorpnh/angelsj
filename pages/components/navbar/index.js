@@ -184,7 +184,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 const MobileNav = () => {
     return (
         <Stack
-            bg={useColorModeValue('pink.50', 'purple.800')}
+            bg={useColorModeValue('pink.100', 'purple.700')}
             borderBottom={'1px solid black'}
             p={4}
             display={{ md: "none" }}
