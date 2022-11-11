@@ -1,7 +1,9 @@
-import {keyframes, Avatar, Box} from '@chakra-ui/react'
+import {keyframes, Avatar, Box, useMediaQuery, useColorModeValue} from '@chakra-ui/react'
 
 
 const AvatarEffect = () => {
+
+    // const [isSmallerThan764] = useMediaQuery('(max-width: 764px)')
 
     const pulseRing = keyframes`
 	0% {
@@ -32,7 +34,7 @@ const AvatarEffect = () => {
                 marginLeft: '-100%',
                 marginTop: '-100%',
                 borderRadius: '50%',
-                bgColor: 'pink.500',
+                bgColor: useColorModeValue('pink.200', 'purple.500'),
                 animation: `2.25s ${pulseRing} cubic-bezier(0.46, 0.03, 0.77, 0.75) -0.4s infinite`,
             }}>
             <Avatar

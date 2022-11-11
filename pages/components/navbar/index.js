@@ -1,77 +1,266 @@
-import { Link, Text, Flex, Container, Image } from "@chakra-ui/react";
-import { useRouter } from 'next/dist/client/router'
+import {
+    Box,
+    Flex,
+    Text,
+    IconButton,
+    Button,
+    Stack,
+    Collapse,
+    Icon,
+    Link,
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    useColorModeValue,
+    Heading,
+    useBreakpointValue,
+    useDisclosure,
+    useColorMode,
+    Image,
+} from "@chakra-ui/react";
+import {
+    HamburgerIcon,
+    CloseIcon,
+    ChevronDownIcon,
+    ChevronRightIcon,
+    MoonIcon,
+    SunIcon,
+} from "@chakra-ui/icons";
 
-const Navbar = () => {
-    const router = useRouter()
-
-    const breakpoints = {
-        sm: '30em',
-        md: '48em',
-        lg: '62em',
-        xl: '80em',
-        '2xl': '96em',
-    }
-    const fonts = {
-        fonts: {
-            navbar: `'Dosis', sans-serif`
-          },
-    }
-
-    const links = [
-        {
-            name: 'Início',
-            href: '#'
-        },
-        {
-            name: 'Peças',
-            href: '#pecas'
-        },
-        {
-            name: 'Contatos',
-            href: '#contatos'
-        }
-    ]
+export default function WithSubnavigation() {
+    const { isOpen, onToggle } = useDisclosure();
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return (
-        <>
-            <Container 
-            
-            maxW='container.xl'
+        <Box>
+            <Flex
+                bg={useColorModeValue("pink.100", "purple.900")}
+                color={useColorModeValue('black', 'white')}
+                minH={"60px"}
+                py={{ base: 2 }}
+                px={{ base: 4 }}
+                borderBottom={1}
+                borderStyle={"solid"}
+                borderColor='black'
+                align={"center"}
             >
                 <Flex
-                    paddingTop='1rem'
-                    justify='space-around'
-                    alignItems='center'
+                    flex={{ base: 1, md: "auto" }}
+                    ml={{ base: -2 }}
+                    display={{ base: "flex", md: "none" }}
                 >
-                    <Image
-                        src='https://thumbs2.imgbox.com/f5/e4/XV8Lbdsk_t.png'
-                        boxShadow='rgba(0, 0, 0, 0.16) 0px 2px 6px'
-                        borderRadius='full'
+                    <IconButton
+                        onClick={onToggle}
+                        icon={
+                            isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                        }
+                        variant={"ghost"}
+                        aria-label={"Toggle Navigation"}
                     />
-                    <Flex
-                        gap='3rem'
+                </Flex>
+                <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+                    <Heading
+                        textAlign={useBreakpointValue({ base: "center", md: "left" })}
+                        color={useColorModeValue("gray.800", "white")}
+                        fontSize="medium"
                     >
-                        {links.map(({ name, href }) => (
-                            <Link
-                                key={name}
-                                href={href}
-                                _hover={{ textDecoration: 'none' }}
-                            >
-                                <Text
-                                fontSize='lg'
-                                fontFamily={fonts.navbar}
-                                    _hover={{ color: 'pink.500' }}
-                                >
-                                    {name}
-                                </Text>
-                            </Link>
-                        ))}
+                        <Image
+                            src='https://thumbs2.imgbox.com/f5/e4/XV8Lbdsk_t.png'
+                            boxSize='3rem'
+                            boxShadow='rgba(0, 0, 0, 0.16) 0px 2px 6px'
+                            borderRadius='full'
+                        />
+                    </Heading>
+
+                    <Flex display={{ base: "none", md: "flex" }} alignItems='center' ml={10}>
+                        <DesktopNav />
                     </Flex>
                 </Flex>
-            </Container>
-        </>
+                <Stack
+                    flex={{ base: 1, md: 0 }}
+                    justify={"flex-end"}
+                    direction={"row"}
+                    spacing={6}
+                >
+                    <Button onClick={toggleColorMode}>
+                        {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                    </Button>
+                </Stack>
+            </Flex>
 
-    )
+            <Collapse in={isOpen} animateOpacity>
+                <MobileNav />
+            </Collapse>
+        </Box>
+    );
 }
 
-export default Navbar;
+const DesktopNav = () => {
+    const linkColor = useColorModeValue("gray.600", "gray.200");
+    const linkHoverColor = useColorModeValue("gray.800", "white");
+    const popoverContentBgColor = useColorModeValue("white", "gray.800");
+
+    return (
+        <Stack direction={"row"} spacing={4}>
+            {NAV_ITEMS.map((navItem) => (
+                <Box key={navItem.label}>
+                    <Popover trigger={"hover"} placement={"bottom-start"}>
+                        <PopoverTrigger>
+                            <Link
+                                p={2}
+                                href={navItem.href ?? "#"}
+                                fontSize={"sm"}
+                                fontWeight={500}
+                                color={linkColor}
+                                _hover={{
+                                    textDecoration: "none",
+                                    color: linkHoverColor,
+                                }}
+                            >
+                                {navItem.label}
+                            </Link>
+                        </PopoverTrigger>
+
+                        {navItem.children && (
+                            <PopoverContent
+                                border={0}
+                                boxShadow={"xl"}
+                                bg={popoverContentBgColor}
+                                p={4}
+                                rounded={"xl"}
+                                minW={"sm"}
+                            >
+                                <Stack>
+                                    {navItem.children.map((child) => (
+                                        <DesktopSubNav key={child.label} {...child} />
+                                    ))}
+                                </Stack>
+                            </PopoverContent>
+                        )}
+                    </Popover>
+                </Box>
+            ))}
+        </Stack>
+    );
+};
+
+const DesktopSubNav = ({ label, href, subLabel }) => {
+    return (
+        <Link
+            href={href}
+            role={"group"}
+            display={"block"}
+            p={2}
+            rounded={"md"}
+            _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+        >
+            <Stack direction={"row"} align={"center"}>
+                <Box>
+                    <Text
+                        transition={"all .3s ease"}
+                        _groupHover={{ color: "pink.400" }}
+                        fontWeight={500}
+                    >
+                        {label}
+                    </Text>
+                    <Text fontSize={"sm"}>{subLabel}</Text>
+                </Box>
+                <Flex
+                    transition={"all .3s ease"}
+                    transform={"translateX(-10px)"}
+                    opacity={0}
+                    _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+                    justify={"flex-end"}
+                    align={"center"}
+                    flex={1}
+                >
+                    <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+                </Flex>
+            </Stack>
+        </Link>
+    );
+};
+
+const MobileNav = () => {
+    return (
+        <Stack
+            bg={useColorModeValue('pink.50', 'purple.800')}
+            borderBottom={'1px solid black'}
+            p={4}
+            display={{ md: "none" }}
+        >
+            {NAV_ITEMS.map((navItem) => (
+                <MobileNavItem key={navItem.label} {...navItem} />
+            ))}
+        </Stack>
+    );
+};
+
+const MobileNavItem = ({ label, children, href }) => {
+    const { isOpen, onToggle } = useDisclosure();
+
+    return (
+        <Stack spacing={4} onClick={children && onToggle}>
+            <Flex
+                py={2}
+                as={Link}
+                href={href ?? "#"}
+                justify={"space-between"}
+                align={"center"}
+                _hover={{
+                    textDecoration: "none",
+                }}
+            >
+                <Text
+                    fontWeight={600}
+                    color={useColorModeValue("gray.600", "gray.200")}
+                >
+                    {label}
+                </Text>
+                {children && (
+                    <Icon
+                        as={ChevronDownIcon}
+                        transition={"all .25s ease-in-out"}
+                        transform={isOpen ? "rotate(180deg)" : ""}
+                        w={6}
+                        h={6}
+                    />
+                )}
+            </Flex>
+
+            <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
+                <Stack
+                    mt={2}
+                    pl={4}
+                    borderLeft={1}
+                    borderStyle={"solid"}
+                    borderColor={useColorModeValue("gray.200", "gray.700")}
+                    align={"start"}
+                >
+                    {children &&
+                        children.map((child) => (
+                            <Link key={child.label} py={2} href={child.href}>
+                                {child.label}
+                            </Link>
+                        ))}
+                </Stack>
+            </Collapse>
+        </Stack>
+    );
+};
+
+
+const NAV_ITEMS = [
+    {
+        label: "Início",
+        href: "#",
+    },
+    {
+        label: "Peças",
+        href: "#pecas",
+    },
+    {
+        label: "Contato",
+        href: "#contato",
+    }
+];
