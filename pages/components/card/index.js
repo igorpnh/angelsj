@@ -12,10 +12,10 @@ import {
 
 import { useState } from "react";
 import { items } from "../../api/cards";
-import { ModalCard } from "../modal";
+import ModalCard from "../modal";
 import theme from "../../../styles/theme";
 
-export const CardItem = () => {
+const CardItem = () => {
   const [selectedCard, setSelectedCard] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -27,6 +27,7 @@ export const CardItem = () => {
   return (
     <>
       <SimpleGrid
+        id="pecas"
         columns={[1, 2, 4]}
         spacing={6}
         rowGap={10}
@@ -35,7 +36,7 @@ export const CardItem = () => {
         w="full"
       >
         {items.map((dataItem) => (
-          <Box boxShadow="0 0 10px rgba(0,0,0,0.3)" w="100%" overflow="hidden">
+          <Box key={dataItem.id} boxShadow="0 0 10px rgba(0,0,0,0.3)" w="100%" overflow="hidden">
             <Image
               onClick={() => handleOpenModal(dataItem)}
               borderTopRadius="lg"
@@ -61,3 +62,4 @@ export const CardItem = () => {
     </>
   );
 };
+export default CardItem;

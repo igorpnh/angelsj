@@ -9,7 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-export const ModalCard = ({ selectedValue, open, setOpen }) => {
+const ModalCard = ({ selectedValue, open, setOpen }) => {
   const { isOpen, onClose } = useDisclosure({
     isOpen: open,
     onClose(){
@@ -32,3 +32,5 @@ export const ModalCard = ({ selectedValue, open, setOpen }) => {
     </>
   );
 };
+
+export default ModalCard;
