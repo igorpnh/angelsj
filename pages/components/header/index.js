@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <>
       <Container
-        marginTop="3rem"
+        marginTop={isLargerThan1000 ? "3rem" : "0px"}
         maxW="container.xl"
         h="100vh"
         w="100%"
