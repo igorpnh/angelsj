@@ -54,7 +54,6 @@ export default function Carousel({ selectedValue }) {
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
-        colorScheme="messenger"
         backgroundColor={useColorModeValue('pink.100', 'purple.900')}
         color={useColorModeValue('black', 'white')}
         _hover={{
@@ -73,7 +72,6 @@ export default function Carousel({ selectedValue }) {
       {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
-        colorScheme="messenger"
         backgroundColor={useColorModeValue('pink.100', 'purple.900')}
         color={useColorModeValue('black', 'white')}
         _hover={{
