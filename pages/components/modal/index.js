@@ -9,6 +9,7 @@ import {
   useDisclosure,
   Text
 } from "@chakra-ui/react";
+import Carousel from "../carousel";
 
 const ModalCard = ({ selectedValue, open, setOpen }) => {
   const { isOpen, onClose } = useDisclosure({
@@ -26,13 +27,13 @@ if (selectedValue) {
       <ModalContent>
         <ModalHeader>{selectedValue.name}</ModalHeader>
         <ModalCloseButton />
-        <ModalBody>{selectedValue.desc}</ModalBody>
+        <ModalBody><Carousel selectedValue={selectedValue}/></ModalBody>
         <ModalFooter></ModalFooter>
       </ModalContent>
     </Modal> 
   );
 } return (
-  <Text>Deu bug aqui</Text>
+  <Text>Não encontramos os detalhes desse produto :(</Text>
 )
 };
 

@@ -3,48 +3,73 @@ export const items = [
         id: "0",
         name: "Tornozeleira",
         desc: "Tornozeleira em Prata 921",
-        price: "R$300",
-        href: "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+        price: "300",
+        img: [
+            'https://img.freepik.com/fotos-gratis/duas-maquetes-de-poster-emolduradas-verticalmente-em-uma-parede-branca-vazia-em-uma-decoracao-de-sala-de-estar-com-uma-poltrona-renderizacao-3d_41470-3991.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=8d351475742aaf6e8935effa4a2a7ba244626dc3f40ebcf6c5d85a0ee486bff2',
+
+],        
         alt: "Imagem do item"
     },
     {
         id: "1",
         name: "Anel",
         desc: "Anel Solitário",
-        price: "R$250",
-        href: "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+        price: "250",
+        img: [
+            "https://img.freepik.com/fotos-gratis/duas-maquetes-de-poster-emolduradas-verticalmente-em-uma-parede-branca-vazia-em-uma-decoracao-de-sala-de-estar-com-uma-poltrona-renderizacao-3d_41470-3991.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=8d351475742aaf6e8935effa4a2a7ba244626dc3f40ebcf6c5d85a0ee486bff2",
+            "https://img.freepik.com/fotos-gratis/moldura-preta-na-parede-de-tijolo-branco_24972-315.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=c0c471ab700c7ef553d3ec9e6192cf6b618c35ae00994c5d408e77b344d3e612",
+            "https://img.freepik.com/fotos-gratis/moldura-de-poster-de-maquete-em-fundo-interior-moderno-parede-cinza-renderizacao-3d_41470-3909.jpg?w=740&t=st=1668811669~exp=1668812269~hmac=00a46054e09a2a3390c880b24fc760130d28b2518faeb9984a889db253db4348",
+            "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127"
+        ],        
         alt: "Imagem do item"
     },
     {
         id: "2",
         name: "Aliança",
         desc: "Aliança em Prata 921",
-        price: "R$180",
-        href: "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-        alt: "Imagem do item"
+        price: "180",
+        img: {
+            hrefOne: "https://img.freepik.com/fotos-gratis/duas-maquetes-de-poster-emolduradas-verticalmente-em-uma-parede-branca-vazia-em-uma-decoracao-de-sala-de-estar-com-uma-poltrona-renderizacao-3d_41470-3991.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=8d351475742aaf6e8935effa4a2a7ba244626dc3f40ebcf6c5d85a0ee486bff2",
+            hrefTwo: "https://img.freepik.com/fotos-gratis/moldura-preta-na-parede-de-tijolo-branco_24972-315.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=c0c471ab700c7ef553d3ec9e6192cf6b618c35ae00994c5d408e77b344d3e612",
+            hrefThree: "https://img.freepik.com/fotos-gratis/moldura-de-poster-de-maquete-em-fundo-interior-moderno-parede-cinza-renderizacao-3d_41470-3909.jpg?w=740&t=st=1668811669~exp=1668812269~hmac=00a46054e09a2a3390c880b24fc760130d28b2518faeb9984a889db253db4348",
+            hrefFour: "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127"
+        },        alt: "Imagem do item"
     },
     {
         id: "3",
         name: "Dedeira",
         desc: "Dedeira em Prata 921",
-        price: "R$300",
-        href: "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+        price: "300",
+        img: {
+            hrefOne: "https://img.freepik.com/fotos-gratis/duas-maquetes-de-poster-emolduradas-verticalmente-em-uma-parede-branca-vazia-em-uma-decoracao-de-sala-de-estar-com-uma-poltrona-renderizacao-3d_41470-3991.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=8d351475742aaf6e8935effa4a2a7ba244626dc3f40ebcf6c5d85a0ee486bff2",
+            hrefTwo: "https://img.freepik.com/fotos-gratis/moldura-preta-na-parede-de-tijolo-branco_24972-315.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=c0c471ab700c7ef553d3ec9e6192cf6b618c35ae00994c5d408e77b344d3e612",
+            hrefThree: "https://img.freepik.com/fotos-gratis/moldura-de-poster-de-maquete-em-fundo-interior-moderno-parede-cinza-renderizacao-3d_41470-3909.jpg?w=740&t=st=1668811669~exp=1668812269~hmac=00a46054e09a2a3390c880b24fc760130d28b2518faeb9984a889db253db4348",
+            hrefFour: "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127"
+        },
         alt: "Imagem do item"
     },
     {
         id: "4",
         name: "Dedeira",
         desc: "Dedeira em Prata 921",
-        price: "R$300",
-        href: "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-        alt: "Imagem do item"
+        price: "300",
+        img: {
+            hrefOne: "https://img.freepik.com/fotos-gratis/duas-maquetes-de-poster-emolduradas-verticalmente-em-uma-parede-branca-vazia-em-uma-decoracao-de-sala-de-estar-com-uma-poltrona-renderizacao-3d_41470-3991.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=8d351475742aaf6e8935effa4a2a7ba244626dc3f40ebcf6c5d85a0ee486bff2",
+            hrefTwo: "https://img.freepik.com/fotos-gratis/moldura-preta-na-parede-de-tijolo-branco_24972-315.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=c0c471ab700c7ef553d3ec9e6192cf6b618c35ae00994c5d408e77b344d3e612",
+            hrefThree: "https://img.freepik.com/fotos-gratis/moldura-de-poster-de-maquete-em-fundo-interior-moderno-parede-cinza-renderizacao-3d_41470-3909.jpg?w=740&t=st=1668811669~exp=1668812269~hmac=00a46054e09a2a3390c880b24fc760130d28b2518faeb9984a889db253db4348",
+            hrefFour: "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127"
+        },        alt: "Imagem do item"
     },
     {
         id: "5",
         name: "Dedeira",
         desc: "Dedeira em Prata 921",
-        price: "R$300",
-        href: "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-        alt: "Imagem do item"
+        price: "300",
+        img: {
+            hrefOne: "https://img.freepik.com/fotos-gratis/duas-maquetes-de-poster-emolduradas-verticalmente-em-uma-parede-branca-vazia-em-uma-decoracao-de-sala-de-estar-com-uma-poltrona-renderizacao-3d_41470-3991.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=8d351475742aaf6e8935effa4a2a7ba244626dc3f40ebcf6c5d85a0ee486bff2",
+            hrefTwo: "https://img.freepik.com/fotos-gratis/moldura-preta-na-parede-de-tijolo-branco_24972-315.jpg?w=740&t=st=1668811668~exp=1668812268~hmac=c0c471ab700c7ef553d3ec9e6192cf6b618c35ae00994c5d408e77b344d3e612",
+            hrefThree: "https://img.freepik.com/fotos-gratis/moldura-de-poster-de-maquete-em-fundo-interior-moderno-parede-cinza-renderizacao-3d_41470-3909.jpg?w=740&t=st=1668811669~exp=1668812269~hmac=00a46054e09a2a3390c880b24fc760130d28b2518faeb9984a889db253db4348",
+            hrefFour: "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127"
+        },        alt: "Imagem do item"
     },
 ]

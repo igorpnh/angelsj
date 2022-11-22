@@ -42,7 +42,7 @@ const Header = () => {
         marginTop="3rem"
         maxW="container.xl"
         h="100vh"
-        w='100%'
+        w="100%"
         css={{
           backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
           backgroundAttachment: "fixed",
@@ -51,7 +51,6 @@ const Header = () => {
         <Flex
           alignItems="center"
           h="100%"
-          
           flexDirection={isLargerThan1000 ? "row" : "column"}
           // gap={isLargerThan1000 ? '0' : '2rem'}
           justify="space-evenly"
@@ -64,23 +63,33 @@ const Header = () => {
                 isSmallerThan764 ? theme.fontSizes.xxl : theme.fontSizes.exl
               }
             >
-              Oi, sejam bem-vindas(os)!
+              Oi, seja bem-vinda(o)!
             </Text>
-            <Text fontSize={isSmallerThan764 ? fontSizes.sm : fontSizes.lg}>
-              Meu nome é Angel e sou criadora dessa loja 💅🏽
-            </Text>
-            <Text fontSize={isSmallerThan764 ? fontSizes.sm : fontSizes.lg}>
-              Peças com 1 ano de garantia sendo atualizadas todo mês
-            </Text>
-            <Text fontSize={isSmallerThan764 ? fontSizes.sm : fontSizes.lg}>
-              Se quiser saber mais,
-              <Link
-                target="_blank"
-                href="https://api.whatsapp.com/send?phone=5514996408058"
-                _hover={{ textDecoration: "none", color: "pink.500" }}
-              >
-                📲 (14)99640-8058
-              </Link>
+            <Flex align="center" justify="center" gap="0.5%">
+              <Box>
+                <Text fontSize={isSmallerThan764 ? fontSizes.sm : fontSizes.xl}>
+                  Sou revendedora
+                </Text>
+              </Box>
+              <Box>
+                <Link
+                  target="_blank"
+                  href="https://www.instagram.com/leticiamagalhaessemijoias/"
+                  _hover={{ textDecoration: "none" }}
+                >
+                  <Text
+                    fontSize={isSmallerThan764 ? fontSizes.sm : fontSizes.xl}
+                    transition="ease-in all 150ms"
+                    _hover={{ transform: "translatey(-.2rem)" }}
+                  >
+                    @leticiamagalhaessemijoias
+                  </Text>
+                </Link>
+              </Box>
+              💅🏽
+            </Flex>
+            <Text fontSize={isSmallerThan764 ? fontSizes.sm : fontSizes.xl}>
+              Reposição de peças todos mês
             </Text>
           </Box>
           <Image
