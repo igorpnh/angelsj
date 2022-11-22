@@ -27,15 +27,16 @@ const CardItem = () => {
     <>
       <SimpleGrid
         id="pecas"
-        columns={[1, 2, 4]}
+        columns={[1, 2, 3, 4]}
         spacing={4}
-        rowGap={10}
+        rowGap='4rem'
         p={2}
         placeItems="center"
         w="full"
       >
         {items.map((dataItem) => (
           <Flex
+          key={dataItem.id}
             borderRadius="20px"
             h="375px"
             direction="column"
@@ -43,7 +44,7 @@ const CardItem = () => {
           >
             <Box>
               <Box mb="10px">
-                <Image w='130%' h='300px' src={dataItem.img.hrefOne} borderTopRadius="lg" me="auto" />
+                <Image w='130%' h='300px' src={dataItem.img[0]} borderTopRadius="lg" me="auto" />
               </Box>
               <Box px="20px">
                 <Text fontWeight="600" w="100%" fontSize="2xl">
