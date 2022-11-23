@@ -45,6 +45,8 @@ const CardItem = () => {
             <Box>
               <Box mb="10px">
                 <Image
+                  onClick={() => handleOpenModal(dataItem)}
+                  cursor='pointer'
                   w="130%"
                   h="300px"
                   src={dataItem.img[0]}
@@ -87,16 +89,24 @@ const CardItem = () => {
                     color="green.400"
                   />
                   {dataItem.sale ? (
-                    <Flex gap='0.7rem'>
-                    <Text color='gray.600' as='del' fontSize="md" my="auto" fontWeight="500">
-                      {dataItem.price}
-                    </Text>
-                    <Text fontSize='xl' my='auto' fontWeight='500'>
-                      {dataItem.salePrice}
-                    </Text>
+                    <Flex gap="0.7rem">
+                      <Text
+                        color="gray.600"
+                        as="del"
+                        fontSize="md"
+                        my="auto"
+                        fontWeight="500"
+                      >
+                        {dataItem.price}
+                      </Text>
+                      <Text fontSize="xl" my="auto" fontWeight="500">
+                        {dataItem.salePrice}
+                      </Text>
                     </Flex>
                   ) : (
-                    <Text fontSize='xl' my='auto' fontWeight='500'>{dataItem.price}</Text>
+                    <Text fontSize="xl" my="auto" fontWeight="500">
+                      {dataItem.price}
+                    </Text>
                   )}
                 </Flex>
                 <Flex>
