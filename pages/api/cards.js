@@ -11,6 +11,8 @@ export const items = [
       "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127",
     ],
     alt: "Imagem do item",
+    sale: true,
+    salePrice: "250"
   },
   {
     id: "1",
@@ -24,6 +26,7 @@ export const items = [
       "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127",
     ],
     alt: "Imagem do item",
+    sale: false
   },
   {
     id: "2",
@@ -37,6 +40,7 @@ export const items = [
       "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127",
     ],
     alt: "Imagem do item",
+    sale: false
   },
   {
     id: "3",
@@ -50,6 +54,7 @@ export const items = [
         "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127",
       ],
     alt: "Imagem do item",
+    sale: false
   },
   {
     id: "4",
@@ -63,6 +68,7 @@ export const items = [
         "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127",
       ],
     alt: "Imagem do item",
+    sale: false
   },
   {
     id: "5",
@@ -76,5 +82,6 @@ export const items = [
         "https://img.freepik.com/fotos-gratis/mock-up-frame-foto-parede-montada-no-interior-da-sala-de-estar-no-fundo-da-parede-branca-vazia_41470-4322.jpg?w=740&t=st=1668811670~exp=1668812270~hmac=081b3707d7e64c29c5ce15d8853c5d6a2fde1899ee4e4478c071c449514bc127",
       ],
     alt: "Imagem do item",
+    sale: false
   },
 ];

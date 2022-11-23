@@ -29,14 +29,14 @@ const CardItem = () => {
         id="pecas"
         columns={[1, 2, 3, 4]}
         spacing={4}
-        rowGap='4rem'
+        rowGap="4rem"
         p={2}
         placeItems="center"
         w="full"
       >
         {items.map((dataItem) => (
           <Flex
-          key={dataItem.id}
+            key={dataItem.id}
             borderRadius="20px"
             h="375px"
             direction="column"
@@ -44,7 +44,13 @@ const CardItem = () => {
           >
             <Box>
               <Box mb="10px">
-                <Image w='130%' h='300px' src={dataItem.img[0]} borderTopRadius="lg" me="auto" />
+                <Image
+                  w="130%"
+                  h="300px"
+                  src={dataItem.img[0]}
+                  borderTopRadius="lg"
+                  me="auto"
+                />
               </Box>
               <Box px="20px">
                 <Text fontWeight="600" w="100%" fontSize="2xl">
@@ -72,7 +78,7 @@ const CardItem = () => {
                 {dataItem.desc}
               </Text>
               <Flex pb={3} justify="space-between">
-                <Flex alignItems='center' me="25px">
+                <Flex alignItems="center" me="25px">
                   <Icon
                     as={TbCurrencyReal}
                     w="20px"
@@ -80,12 +86,29 @@ const CardItem = () => {
                     me="6px"
                     color="green.400"
                   />
-                  <Text fontSize="xl"  my="auto" fontWeight="500">
-                    {dataItem.price}
-                  </Text>
+                  {dataItem.sale ? (
+                    <Flex gap='0.7rem'>
+                    <Text color='gray.600' as='del' fontSize="md" my="auto" fontWeight="500">
+                      {dataItem.price}
+                    </Text>
+                    <Text fontSize='xl' my='auto' fontWeight='500'>
+                      {dataItem.salePrice}
+                    </Text>
+                    </Flex>
+                  ) : (
+                    <Text fontSize='xl' my='auto' fontWeight='500'>{dataItem.price}</Text>
+                  )}
                 </Flex>
                 <Flex>
-                  <Icon  cursor='pointer' onClick={() => handleOpenModal(dataItem)} as={RiEyeLine} w="20px" h="20px" me="6px" _hover={{transform: 'scale(1.3)'}} />
+                  <Icon
+                    cursor="pointer"
+                    onClick={() => handleOpenModal(dataItem)}
+                    as={RiEyeLine}
+                    w="20px"
+                    h="20px"
+                    me="6px"
+                    _hover={{ transform: "scale(1.3)" }}
+                  />
                 </Flex>
               </Flex>
             </Flex>

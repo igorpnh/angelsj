@@ -65,9 +65,18 @@ const ModalCard = ({ selectedValue, open, setOpen }) => {
                   me="6px"
                   color="green.400"
                 />
-                <Text fontSize="xl" my="auto" fontWeight="500">
-                  {selectedValue.price}
-                </Text>
+                {selectedValue.sale ? (
+                    <Flex gap='0.7rem'>
+                    <Text color='gray.600' as='del' fontSize="md" my="auto" fontWeight="500">
+                      {selectedValue.price}
+                    </Text>
+                    <Text fontSize='xl' my='auto' fontWeight='500'>
+                      {selectedValue.salePrice}
+                    </Text>
+                    </Flex>
+                  ) : (
+                    <Text fontSize='xl' my='auto' fontWeight='500'>{selectedValue.price}</Text>
+                  )}
               </Flex>
             </Box>
             <Box pt="10%">
